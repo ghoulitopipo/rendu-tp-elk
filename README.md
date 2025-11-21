@@ -130,7 +130,7 @@ GET shakespeare/_search?q=caesar brutus calpurnia
 
 - (Question) Selon vous, pourquoi le quatrième document, qui contient tous les termes, n’est pas en première position ?
 
-La requête est traitée comme un `caesar OR brutus OR calpurnia`, et donc l'affichage dépends des paramètres de la recherche, donc même si il y a les 3, ils sera interprété différament
+La requête est traitée comme un `caesar OR brutus OR calpurnia`, et donc l'affichage dépend des paramètres de la recherche, donc même si il y a les 3, ils seront interprété différamment
 
 - (Question) Modifier la requête pour que seul le quatrième document réponde.
 
@@ -150,7 +150,7 @@ GET shakespeare/_search?q=cesar~
 
 - (Question) En déduire le rôle de l’opérateur ~
 
-La recherche est étendue pour toruver des termes similaires.
+La recherche est étendue pour trouver des termes similaires.
 
 ### AGGREGATION API
 
@@ -229,4 +229,4 @@ GET news/_search?size=10
 
 - (Question) Développez un tableau de bord sur ces données. Ce tableau devra comporter une carte géographique des hôtels classés en fonction de leur nombre d’étoiles.
 
-  ![Liste des hôtels en Île-de-Francd](img_rendu/hotels_map.png)
+  ![Liste des hôtels en Île-de-France](img_rendu/hotels_map.png)
