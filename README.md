@@ -204,9 +204,83 @@ GET news/_search?size=10
       }
     }
   },
-  "fields": ["liste des champs à afficher"],
+  "fields": ["headline, short_description, date,link"],
   "_source": false
 }
+
+Résultat de la requete :
+
+```json
+{
+  "took": 1493,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 30,
+      "relation": "eq"
+    },
+    "max_score": 0.45529795,
+    "hits": [
+      {
+        "_index": "news",
+        "_id": "https://www.huffingtonpost.com/entry/medical-professionals-fact-check-greys-anatomy-sex-scenes_us_5af1f004e4b041fd2d2bcd59",
+        "_score": 0.45529795
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/cbp-detained-migrants-flu-vaccinations_n_5d5c62abe4b0f667ed69e9c4",
+        "_score": 0.44563347
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/pediatricians-racism_n_626fcfbde4b029505df470fc",
+        "_score": 0.4383204
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/sanjay-gupta-trump-health-questions_n_5f7aa25dc5b64cf6a25273b4",
+        "_score": 0.43696985
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/cdc-expert-axed-china_n_5e77dd7bc5b63c3b6492aba3",
+        "_score": 0.42713836
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/how-to-know-doctor-is-a-quack_l_5f285ec7c5b6a34284be2d44",
+        "_score": 0.42468795
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/tokyo-olympics-to-allow-limit-of-10000-local-fans-in-venues_n_60d07c2ce4b0dd017429d035",
+        "_score": 0.42302868
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffingtonpost.com/entry/catholic-hospitals-refuse-to-treat_us_5b06c82fe4b05f0fc8458db3",
+        "_score": 0.42145663
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/how-quack-doctors-and-powerful-gop-operatives-spread-misinformation-to-millions_n_5f208048c5b66859f1f33148",
+        "_score": 0.4181326
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/covid-19-antiviral-pill-biden_n_60cbf90de4b01af0c26e5662",
+        "_score": 0.41806892
+      }
+    ]
+  }
+}
+```
 
 - (Question) Rechercher les articles similaires à celui-ci https://www.huffpost.com/entry/15-comedy-documentaries-worth-watching-on-netflix-photos_n_1619966. Copier / coller le début de l'article dans la requête.
 
@@ -221,9 +295,83 @@ GET news/_search?size=10
       }
     }
   },
-  "fields": ["liste des champs à afficher"],
+  "fields": ["headline, short_description, date,link"],
   "_source": false
 }
+
+Résultat de la requete :
+
+```json
+{
+  "took": 2074,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 30,
+      "relation": "eq"
+    },
+    "max_score": 0.50964284,
+    "hits": [
+      {
+        "_index": "news",
+        "_id": "https://www.huffingtonpost.com/entry/good-movies-netflix_us_5af98954e4b0e57cd9fbb43f",
+        "_score": 0.50964284
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/good-movies-netflix_l_5c740a76e4b00eed08376b23",
+        "_score": 0.50932616
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/movies-leaving-netflix-december_l_5fcfb3a7c5b619bc4c36534d",
+        "_score": 0.4993825
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffingtonpost.com/entry/queer-eye-season-two-dates_us_5b06dadee4b07c4ea10605d8",
+        "_score": 0.48768482
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/best-netflix-stream-the-oa_l_5c93ca8ae4b088a7df0569a0",
+        "_score": 0.48148707
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/good-movies-netflix_n_5c0e8085e4b06484c9fcce8f",
+        "_score": 0.48082238
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffingtonpost.com/entry/amazon-prime-what-to-watch_us_5aeb7198e4b041fd2d248176",
+        "_score": 0.4788296
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/netflix-films-2020-good-reviews_l_5f69fd1bc5b655acbc70111d",
+        "_score": 0.4785452
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/new-movies-shows-netflix-july-2022_l_62b35d36e4b0cdccbe65feec",
+        "_score": 0.47538525
+      },
+      {
+        "_index": "news",
+        "_id": "https://www.huffpost.com/entry/new-on-netflix-january-2022_l_61bd226ae4b04b42ab5fce98",
+        "_score": 0.47538525
+      }
+    ]
+  }
+}
+```
 
 # Partie 4 - Pour aller plus loin : Logstach
 
