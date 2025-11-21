@@ -284,6 +284,7 @@ Résultat de la requete :
 
 - (Question) Rechercher les articles similaires à celui-ci https://www.huffpost.com/entry/15-comedy-documentaries-worth-watching-on-netflix-photos_n_1619966. Copier / coller le début de l'article dans la requête.
 
+```json
 GET news/_search?size=10
 {
   "query": {
@@ -298,6 +299,7 @@ GET news/_search?size=10
   "fields": ["headline, short_description, date,link"],
   "_source": false
 }
+```
 
 Résultat de la requete :
 
