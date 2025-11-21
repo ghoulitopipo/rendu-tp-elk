@@ -58,32 +58,41 @@ GET bank/_doc/2
 
 - (Question) Idem mais récupérer uniquement le source (champs _source)
 
+```console
 GET bank/_source/2
+```
 
 - (Question) Idem mais en ne sélectionnant que le nom et le prénom (firstname, lastname)
 
+```console
 GET bank/_source/2?_source=firstname,lastname
+```
 
 ### SEARCH API
 
 - (Question) Retrouver tous les comptes
 
+```console
 GET bank/_search
 {
   "query": { "match_all": {} }
 }
+```
 
 - (Question) Retrouver tous les comptes dont la ville (champs city) est Belvoir
 
+```console
 GET bank/_search
 {
   "query": {
     "term": { "city.keyword": "Belvoir" }
   }
 }
+```
 
 - (Question) Retrouver tous les comptes dont la ville (champs city) est Belvoir ET l’employeur Xurban
 
+```console
 GET bank/_search
 {
   "query": {
@@ -95,6 +104,7 @@ GET bank/_search
     }
   }
 }
+```
 
 ### Visualisation des données avec OpenSearch Dashboards
 
@@ -124,19 +134,27 @@ GET bank/_search
 
 - (Question) Rechercher les documents contenant le terme KING dans les champs text_entry OU playname. Accordez deux fois plus d’importance aux documents qui contiennent le terme dans le champ play_name (astuce : KING^2).
 
+```console
 GET shakespeare/_search?q=play_name:KING^2 OR text_entry:KING
+```
 
 - (Question) Rechercher les documents où l’orateur (champ speaker) CAESAR parle de Brutus (champ text_entry)
 
+```console
 GET shakespeare/_search?q=speaker:CAESAR AND text_entry:Brutus
+```
 
 - (Question) Rechercher les documents où l’orateur(champ speaker) CAESAR ne parle PAS de Brutus (champ text_entry)
 
+```console
 GET shakespeare/_search?q=speaker:CAESAR AND NOT text_entry:Brutus
+```
 
 - (Question) Rechercher les documents répondant à la requête `caesar brutus calpurnia`
 
+```console
 GET shakespeare/_search?q=caesar brutus calpurnia
+```
 
 - (Question) Selon vous, pourquoi le quatrième document, qui contient tous les termes, n’est pas en première position ?
 
@@ -144,11 +162,15 @@ La requête est traitée comme un `caesar OR brutus OR calpurnia`, et donc l'aff
 
 - (Question) Modifier la requête pour que seul le quatrième document réponde.
 
+```console
 GET shakespeare/_search?q=caesar AND brutus AND calpurnia
+```
 
 - (Question) Rechercher les documents répondant à la requête cesar (la faute est volontaire)
 
+```console
 GET shakespeare/_search?q=cesar
+```
 
 - (Question) Pourquoi aucun document ne répond ?
 
@@ -156,7 +178,9 @@ Aucun doc ne réponds car il y a une faute
 
 - (Question) Essayez maintenant avec la requête cesar~ 
 
+```console
 GET shakespeare/_search?q=cesar~
+```
 
 - (Question) En déduire le rôle de l’opérateur ~
 
@@ -166,6 +190,7 @@ La recherche est étendue pour trouver des termes similaires.
 
 - (Question) Trouver le nombre total de pièces (champ play_name)
 
+```console
 POST shakespeare/_search?q=*
 {
   "size": 0,
@@ -175,9 +200,11 @@ POST shakespeare/_search?q=*
     }
   }
 }
+```
 
 - (Question) En une requête, calculer le nombre de lignes (champ line_id) pour chaque pièce (champ play_name)
 
+```console
 POST shakespeare/_search
 {
   "size": 0,
@@ -194,6 +221,7 @@ POST shakespeare/_search
     }
   }
 }
+```
 
 # Partie 3 - Recherches sémantiques
 
@@ -203,6 +231,7 @@ model_id : o2rqpZoBYKbjyQMtTWfj
 
 - (Question) Rechercher "Usage of artificial intelligence in medicine". Afficher les champs headline, short_description, date et link.
 
+```console
 GET news/_search?size=10
 {
   "query": {
@@ -217,6 +246,7 @@ GET news/_search?size=10
   "fields": ["headline, short_description, date,link"],
   "_source": false
 }
+```
 
 Résultat de la requete :
 
