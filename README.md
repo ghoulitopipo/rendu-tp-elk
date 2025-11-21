@@ -52,7 +52,9 @@ POST bank/_delete_by_query
 ### GET API
 - (Question) Obtenir le compte dont l’ID est 2
 
+```console
 GET bank/_doc/2
+```
 
 - (Question) Idem mais récupérer uniquement le source (champs _source)
 
