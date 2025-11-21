@@ -2,6 +2,7 @@
 ### INDEX AND UPDATE API
 - (Question) Après avoir étudié la structure d’un document, ajouter un nouveau compte dont l’ID est 10001
 
+```console
 PUT bank/_create/10001
 {
   "account_number": 10001,
@@ -16,9 +17,11 @@ PUT bank/_create/10001
   "employer": "non",
   "email": "mail@mail.mail"
 }
+```
 
 - (Question) Mettre à jour le compte précédent en modifiant l’adresse
 
+```console
 POST bank/_update/10001
 {
   "doc": {
@@ -26,20 +29,25 @@ POST bank/_update/10001
     "city": "TKTKT"
   }
 }
+```
 
 ### DELETE API
 - (Question) Supprimer le compte précédemment créé
 
+```console
 DELETE bank/_doc/10001
+```
 
 - (Question) Supprimer tous les comptes de la ville de Nicholson (Utiliser _delete_by_query)
 
+```console
 POST bank/_delete_by_query
 {
   "query": {
     "term": { "city.keyword": "Nicholson" }
   }
 }
+```
 
 ### GET API
 - (Question) Obtenir le compte dont l’ID est 2
